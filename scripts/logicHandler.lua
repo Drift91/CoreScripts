@@ -887,7 +887,7 @@ logicHandler.LoadCellForPlayer = function(pid, cellDescription)
     -- Otherwise, only set this new visitor as the authority if their ping is noticeably lower
     -- than that of the current authority
     elseif tes3mp.GetAvgPing(pid) < (tes3mp.GetAvgPing(authPid) - config.pingDifferenceRequiredForAuthority) then
-        tes3mp.LogMessage(enumerations.log.WARN, "Player " .. logicHandler.GetChatName(pid) ..
+        tes3mp.LogMessage(enumerations.log.INFO, "Player " .. logicHandler.GetChatName(pid) ..
             " took over authority from player " .. logicHandler.GetChatName(authPid) ..
             " in " .. cellDescription .. " for latency reasons")
         LoadedCells[cellDescription]:SetAuthority(pid)
@@ -960,7 +960,7 @@ logicHandler.LoadRegionForPlayer = function(pid, regionName, isTeleported)
         -- their ping is noticeably lower than that of the current authority
         elseif not isTeleported and
             tes3mp.GetAvgPing(pid) < (tes3mp.GetAvgPing(authPid) - config.pingDifferenceRequiredForAuthority) then
-            tes3mp.LogMessage(enumerations.log.WARN, "Player " .. logicHandler.GetChatName(pid) ..
+            tes3mp.LogMessage(enumerations.log.INFO, "Player " .. logicHandler.GetChatName(pid) ..
                 " took over authority from player " .. logicHandler.GetChatName(authPid) ..
                 " in region " .. regionName .. " for latency reasons")
             WorldInstance:SetRegionAuthority(pid, regionName)
