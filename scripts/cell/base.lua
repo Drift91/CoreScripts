@@ -716,7 +716,6 @@ function BaseCell:SaveContainers(pid)
                     elseif newCount == 0 then
                         inventory[foundIndex] = nil
                     else
-                        actionCount = item.count
                         tes3mp.LogAppend(enumerations.log.WARN, "- Attempt to remove count of " .. actionCount ..
                             " from item" .. item.refId .. " that only had count of " .. item.count)
                         tes3mp.LogAppend(enumerations.log.WARN, "- Removed just " .. actionCount .. " instead")
